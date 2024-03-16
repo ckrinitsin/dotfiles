@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#
+# This script takes a random wallpaper out of the folder it cd's into
+#   In the repo there are duplicates of the backgrounds with different colorgrading,
+#   I'm "limiting" myself to one colorgrading
+
+
+cd ~/.everforest-walls/nature/
+
+IMAGE=$(find *'1.png' | sort -R | tail -n 1) 
+
+swaymsg output "*" bg ~/.everforest-walls/nature/$IMAGE fill

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# 
+# Takes a screenshot with grimshot, in clipboard or in home directory
+#
+
+MODE=$(printf "copy\nsave" | dmenu)
+
+# If dmenu was cancelled, exit program
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
+case "$MODE" in 
+  *save*)
+      grimshot save area ~/"screenshot-$(date +%F)-$(date +%T).png" && notify-send "screenshot-$(date +%F)-$(date +%T).png" "saved" 
+    ;;
+  *copy*)
+      grimshot copy area && notify-send "Screenshot copied" 
+    ;;
+esac

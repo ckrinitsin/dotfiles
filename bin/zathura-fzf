@@ -1,0 +1,11 @@
+#!/bin/sh
+
+find "$@" -type f -iname '*pdf' > ~/.pdffiles.txt
+
+alacritty -e sh -c 'cat ~/.pdffiles.txt | fzf > ~/.zathurafile.txt'
+
+selected_file=$(cat ~/.zathurafile.txt)
+
+cat ~/.zathurafile.txt | grep '' && zathura "$selected_file"
+
+rm $HOME/.zathurafile.txt $HOME/.pdffiles.txt
