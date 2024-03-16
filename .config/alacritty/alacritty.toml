@@ -1,0 +1,39 @@
+[colors.cursor]
+cursor = "#d3c6aa"
+text = "#232a2e"
+
+[colors.primary]
+background = "#2b3339"
+foreground = "#d3c6aa"
+
+[colors.normal]
+black = "#232a2e"
+blue = "#7fbbb3"
+cyan = "#e69875"
+green = "#83c092"
+magenta = "#d699b6"
+red = "#e67e80"
+white = "#d3c6aa"
+yellow = "#dbbc7f"
+
+[colors.bright]
+black = "#475158"
+blue = "#3a515d"
+cyan = "#d699b6"
+green = "#a7c080"
+magenta = "#7fbbb3"
+red = "#e67e80"
+white = "#9da9a0"
+yellow = "#dbbc7f"
+
+[cursor]
+style = "Block"
+
+[font.normal]
+family = "DroidSansM Nerd Font"
+
+[font]
+size = 12.0
+
+[scrolling]
+history = 2000

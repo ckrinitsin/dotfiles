@@ -1,0 +1,39 @@
+theme = "dracula"
+client_id = "8b99ea3c69664d0b952d35575d543f4c"
+client_port = 8080
+playback_format = """
+{track} 
+{artists} - {album}
+{metadata}"""
+notify_format = { summary = "{track}", body = "{artists} - {album}" }
+tracks_playback_limit = 50
+app_refresh_duration_in_ms = 32
+playback_refresh_duration_in_ms = 0
+page_size_in_rows = 20
+play_icon = "▶"
+pause_icon = "▌▌"
+liked_icon = "♥"
+border_type = "Plain"
+progress_bar_type = "Rectangle"
+playback_window_position = "Top"
+playback_window_width = 6
+enable_media_control = true
+enable_streaming = "DaemonOnly"
+notify_streaming_only=true
+enable_cover_image_cache = true
+default_device = "spotify-daemon"
+
+[copy_command]
+command = "xclip"
+args = [
+    "-sel",
+    "c",
+]
+
+[device]
+name = "spotify-daemon"
+device_type = "speaker"
+volume = 70
+bitrate = 320
+audio_cache = false
+normalization = false

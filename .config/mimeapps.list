@@ -1,0 +1,11 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-IAYNK2.desktop
+message/rfc822=userapp-Thunderbird-IAYNK2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-IAYNK2.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-IAYNK2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-IAYNK2.desktop;

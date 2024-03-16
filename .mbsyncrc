@@ -1,0 +1,49 @@
+IMAPStore christian.krinitsin_tum.de-remote
+Host xmail.mwn.de
+Port 993
+User ge87liq
+PassCmd "pass tum.de/ge87liq"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore christian.krinitsin_tum.de-local
+Subfolders Verbatim
+Path /home/chris/.local/share/mail/christian.krinitsin@tum.de/
+Inbox /home/chris/.local/share/mail/christian.krinitsin@tum.de/INBOX
+
+Channel christian.krinitsin_tum.de
+Far :christian.krinitsin_tum.de-remote:
+Near :christian.krinitsin_tum.de-local:
+Patterns INBOX
+Expunge Both
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+IMAPStore christian_krinitsin.xyz-remote
+Host imap.ionos.de
+Port 993
+User christian@krinitsin.xyz
+PassCmd "pass ionos.de/christian@krinitsin.xyz"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore christian_krinitsin.xyz-local
+Subfolders Verbatim
+Path /home/chris/.local/share/mail/christian@krinitsin.xyz
+Inbox /home/chris/.local/share/mail/christian@krinitsin.xyz/INBOX
+
+Channel christian_krinitsin.xyz
+Expunge Both
+Far :christian_krinitsin.xyz-remote:
+Near :christian_krinitsin.xyz-local:
+Patterns INBOX 
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
