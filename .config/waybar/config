@@ -4,8 +4,7 @@
     "height": 20, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-right": ["custom/mail", "custom/pacman", "mpd", "backlight", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock", "tray"],
-
+    "modules-right": ["custom/pacman", "mpd", "backlight", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock", "tray"],
 
     "keyboard-state": {
         "numlock": true,
@@ -67,6 +66,7 @@
         "timezone": "Europe/Berlin",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%d %h %Y - %R}",
+        "on-click": "alacritty -e calcurse",
     },
     "cpu": {
         "format": " {usage}%",

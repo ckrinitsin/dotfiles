@@ -14,7 +14,9 @@ set $ws10 "10"
 
 workspace_layout default
 default_border pixel 2
-client.focused "#ffffff" "#d699b6" "#ffffff"
+
+client.focused          "#ffffff" "#d699b6" "#ffffff" "#e69875"
+client.focused_inactive "#ffffff" "#83c092" "#ffffff" "#e69875"
 
 gaps inner 6
 gaps outer 3
@@ -134,7 +136,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Ctrl+s exec screenshot
 
 # custom scripts
-bindsym $mod+Shift+i exec dmonitors
 bindsym $mod+Shift+o exec zathura-fzf /home/chris/uni/
 bindsym $mod+Shift+b exec bluetooth-devices
 bindsym $mod+w exec qtb-load-session
@@ -144,7 +145,7 @@ bindsym $mod+Ctrl+w exec random-wallpaper
 
 # autostart
 exec --no-startup-id /usr/bin/dunst
-exec --no-startup-id random-wallpaper
+exec_always --no-startup-id random-wallpaper
 
 input * { 
     xkb_layout "eu" 

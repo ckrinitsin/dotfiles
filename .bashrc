@@ -26,6 +26,3 @@ eval "$(zoxide init --cmd='cd' bash)"
 
 # Navtag
 #source /home/chris/.scripts/navtag/commands.sh
-
-# Own shell functions
-source $HOME/.scripts/shell_functions.sh

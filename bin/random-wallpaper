@@ -6,8 +6,8 @@
 #   I'm "limiting" myself to one colorgrading
 
 
-cd ~/.everforest-walls/nature/
+cd ~/.dotfiles/wallpaper
 
-IMAGE=$(find *'1.png' | sort -R | tail -n 1) 
+IMAGE=$(find *'.png' | sort -R | tail -n 1) 
 
-swaymsg output "*" bg ~/.everforest-walls/nature/$IMAGE fill
+swaymsg output "*" bg ~/.dotfiles/wallpaper/$IMAGE fill

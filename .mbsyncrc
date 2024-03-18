@@ -2,7 +2,7 @@ IMAPStore christian.krinitsin_tum.de-remote
 Host xmail.mwn.de
 Port 993
 User ge87liq
-PassCmd "pass tum.de/ge87liq"
+PassCmd "pass ionos.de/christian.krinitsin@tum.de"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
