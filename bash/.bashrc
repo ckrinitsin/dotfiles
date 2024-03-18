@@ -1,5 +1,5 @@
 # Export own script path
-export PATH=/usr/local/bin/:$HOME/.dotfiles/bin/:$PATH
+export PATH=$HOME/.dotfiles/bin/:/usr/local/bin/:$PATH
 
 # Aliases
 alias ls='ls --color=auto'
