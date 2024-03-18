@@ -27,4 +27,4 @@ for f in *; do
 	if [[ $ignored == false ]]; then
 		stow $f
 	fi
-done
+done 
