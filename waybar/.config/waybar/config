@@ -4,7 +4,7 @@
     "height": 20, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-right": ["custom/pacman", "mpd", "backlight", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock", "tray"],
+    "modules-right": ["custom/pacman", "mpd",  "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock", "tray"],
 
     "keyboard-state": {
         "numlock": true,
