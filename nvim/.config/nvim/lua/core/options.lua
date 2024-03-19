@@ -1,6 +1,7 @@
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.mouse = 'a'
 vim.opt.shell='/bin/bash'
+vim.opt.undofile = true
 
 vim.opt.backup=false
 vim.opt.writebackup=false

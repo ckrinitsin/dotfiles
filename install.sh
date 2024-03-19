@@ -1,5 +1,10 @@
 #!/usr/bin/bash
 
+# cd into script path
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+cd $SCRIPTPATH
+
 # Ignore list
 IGNORE=("bin" "wallpaper" "install.sh" ".git")
 

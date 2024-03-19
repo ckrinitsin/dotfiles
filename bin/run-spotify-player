@@ -2,4 +2,4 @@
 
 ps -A | grep -q 'spotify_player' || spotify_player -d
 
-kitty -e spotify_player
+alacritty -e spotify_player
