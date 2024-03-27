@@ -27,14 +27,33 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-           require'lspconfig'.lua_ls.setup{
+            require'lspconfig'.lua_ls.setup{
                 capabilities = require('cmp_nvim_lsp').default_capabilities(),
                 settings = {  Lua = {  diagnostics = {  globals = { 'vim', 'c2' }  }  }  }
-           }
+            }
 
-           require'lspconfig'.clangd.setup{
-                capabilities = require('cmp_nvim_lsp').default_capabilities()
-           }
+            require'lspconfig'.clangd.setup{
+                capabilities = require('cmp_nvim_lsp').default_capabilities(),
+            }
+
+            vim.api.nvim_create_autocmd('LspAttach', {
+                group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+                callback = function(ev)
+                    -- Enable completion triggered by <c-x><c-o>
+                    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+                    -- Buffer local mappings.
+                    -- See `:help vim.lsp.*` for documentation on any of the below functions
+                    local opts = { buffer = ev.buf }
+                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+                    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+                    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+                end,
+            })
+
         end,
     },
 
@@ -51,6 +70,19 @@ return {
         },
 
         config = function()
+
+        local signs = {
+            Error = " ",
+            Warn = " ",
+            Hint = " ",
+            Info = " "
+        }
+
+        for type, icon in pairs(signs) do
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        end
+
         local cmp = require("cmp")
 
         local luasnip = require("luasnip")
@@ -123,6 +155,11 @@ return {
             }),
           },
         })
+
+        vim.cmd(':set winhighlight=' .. cmp.config.window.bordered().winhighlight)
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+          border = border "CmpDocBorder",
+        })
       end,
     },
 
@@ -131,6 +168,17 @@ return {
        config = function()
          vim.keymap.set({ "v", "n" }, "<leader>an", require("actions-preview").code_actions)
        end,
+    },
+
+    {
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter', -- optional
+            'nvim-tree/nvim-web-devicons',     -- optional
+        }
     },
 
 }
