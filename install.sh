@@ -30,6 +30,6 @@ for f in *; do
 
     # Create symlink if not ignored
 	if [[ $ignored == false ]]; then
-		stow $f
+		stow "$f"
 	fi
 done
