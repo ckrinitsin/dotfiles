@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
 # install packages
-sudo pacman -S nerd-fonts zoxide waybar bison startup-notification flex wayland-protocols pkg-config cmake gcc alacritty dunst neovim qutebrowser starship xdg-user-dirs zathura meson ninja
+sudo pacman -S xorg-server-xwayland nerd-fonts zoxide waybar bison startup-notification flex wayland-protocols pkg-config cmake gcc alacritty dunst neovim qutebrowser starship xdg-user-dirs zathura meson ninja
 
-sudo pacman -S pipewire pipewire-audio pipewire-alsa pipewire-pulse
+sudo pacman -S pipewire pipewire-audio pipewire-alsa pipewire-pulse pavucontrol
 
 # install rofi and dmenu for wayland
 git clone https://github.com/lbonn/rofi.git /tmp/rofi

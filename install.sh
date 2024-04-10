@@ -6,7 +6,7 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 cd $SCRIPTPATH
 
 # Ignore list
-IGNORE=("bin" "wallpaper" "install.sh" ".git")
+IGNORE=("bin" "wallpaper" "install.sh" ".git" "scripts")
 
 # Install important packages
 sudo pacman -S stow
