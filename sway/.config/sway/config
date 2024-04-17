@@ -145,7 +145,7 @@ bindsym $mod+Ctrl+w exec random-wallpaper
 
 # autostart
 exec --no-startup-id /usr/bin/dunst
-exec --no-startup-id /usr/bin/syncthing
+exec --no-startup-id /usr/bin/syncthing --no-browser
 exec_always --no-startup-id random-wallpaper
 
 input * { 
