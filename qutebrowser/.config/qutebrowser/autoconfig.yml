@@ -12,3 +12,6 @@ settings:
     https://www.netflix.com: false
   downloads.prevent_mixed_content:
     global: false
+  qt.args:
+    global:
+    - ppapi-widevine-path=/usr/lib/qt6/plugins/ppapi/libwidevinecdm.so

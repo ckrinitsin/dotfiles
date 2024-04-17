@@ -69,7 +69,7 @@
         "on-click": "alacritty -e calcurse",
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": "  {usage}%",
         "tooltip": false
     },
     "memory": {
@@ -111,7 +111,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  {signalStrength}%",
+        "format-wifi": "   {signalStrength}%",
         "format-ethernet": "  {ipaddr}/{cidr}",
         "format-linked": "  {ifname} (No IP)",
         "format-disconnected": " ⚠",
@@ -131,7 +131,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", " ", "  "]
         },
         "on-click": "pavucontrol"
     },
