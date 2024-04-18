@@ -15,6 +15,7 @@ config.set("colors.webpage.darkmode.enabled", True)
 # Bindings
 config.bind('J', ':tab-prev')
 config.bind('K', ':tab-next')
+config.bind('wq', 'session-save ;; close')
 config.bind('aj', 'spawn --userscript qute-pass')
 config.bind('ak', 'spawn --userscript qute-pass --password-only')
 
