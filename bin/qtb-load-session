@@ -10,7 +10,7 @@ sessions_path=$(realpath ~/.local/share/qutebrowser/sessions)
 
 rm ~/.local/share/qutebrowser/sessions/_autosave.yml
 
-sel=$(find $sessions_path -iname "*.yml" -exec basename {} .yml ";" | sort -u | dmenu)
+sel=$(find $sessions_path -iname "*.yml" -not -name "*sync-conflict*" -exec basename {} .yml ";" | sort -u | dmenu)
 
 if [ $? -ne 0 ]; then
     exit 1
