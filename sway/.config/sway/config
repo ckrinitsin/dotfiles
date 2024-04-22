@@ -21,13 +21,6 @@ client.focused_inactive "#ffffff" "#83c092" "#ffffff" "#e69875"
 gaps inner 6
 gaps outer 3
 
-# use mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# switch/iterate between workspaces
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
-
 xwayland enable
 
 # border
