@@ -1,5 +1,6 @@
 set window-title-basename "true"
 set selection-clipboard "clipboard"
+set sandbox none
 
 # Dracula color theme for Zathura
 # Swaps Foreground for Background to get a light version if the user prefers
@@ -32,8 +33,8 @@ set inputbar-fg                 "#d3c6aa" # Foreground
 set statusbar-bg                "#2b3339" # Background
 set statusbar-fg                "#d3c6aa" # Foreground
 
-set highlight-color             "#ffb86c" # Orange
-set highlight-active-color      "#ff79c6" # Pink
+set highlight-color             "rgba(256, 184, 108, 0.5)" # Orange
+set highlight-active-color      "rgba(256, 121, 198, 0.5)" # Orange
 
 set default-bg                  "#2b3339" # Background
 set default-fg                  "#d3c6aa" # Foreground
