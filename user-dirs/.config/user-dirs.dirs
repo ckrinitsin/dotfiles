@@ -6,4 +6,3 @@
 # absolute path. No other format is supported.
 # 
 XDG_DOWNLOAD_DIR="$HOME/downloads"
-XDG_DOCUMENTS_DIR="$HOME/documents"
