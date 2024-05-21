@@ -11,6 +11,9 @@ IGNORE=("bin" "wallpaper" "install.sh" ".git" "scripts")
 # Install important packages
 sudo pacman -S stow
 
+# Prevent from symlinking whole directory
+mkdir ~/.gnupg
+
 # Setting up all the symlinks
 max=${#IGNORE[@]}
 max=$((max-1))

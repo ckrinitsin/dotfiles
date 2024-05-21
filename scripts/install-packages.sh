@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # install packages
-sudo pacman -S python-tldextract pass gnupg base-devel libnotify wl-clipboard qt6-wayland xorg-server-xwayland nerd-fonts zoxide waybar bison startup-notification flex wayland-protocols pkg-config cmake gcc alacritty dunst neovim qutebrowser starship xdg-user-dirs zathura meson ninja
+sudo pacman -S pacman-contrib python-tldextract pass gnupg base-devel libnotify wl-clipboard qt6-wayland xorg-server-xwayland nerd-fonts zoxide waybar bison startup-notification flex wayland-protocols pkg-config cmake gcc alacritty dunst neovim qutebrowser starship xdg-user-dirs zathura zathura-pdf-mupdf meson ninja
 
 sudo pacman -S pipewire pipewire-audio pipewire-alsa pipewire-pulse pavucontrol
 
