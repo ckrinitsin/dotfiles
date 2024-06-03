@@ -121,15 +121,10 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% ",
         "format-bluetooth-muted": " ",
         "format-muted": " ",
         "format-icons": {
-            "headphone": "",
-            "headset": " ",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": ["", " ", "  "]
         },
         "on-click": "pavucontrol"
@@ -148,8 +143,8 @@
     },
     "custom/pacman": {
         "format": "  {}",
-        "interval": 3600,                     // every hour
-        "exec": "checkupdates | wc -l",       // # of updates
+        "interval": 30,                     // every hour
+        "exec": "pacman -Qu | wc -l",       // # of updates
         "exec-if": "exit 0",                  // always run; consider advanced run conditions
         "on-click": "alacritty -e yay; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8,
