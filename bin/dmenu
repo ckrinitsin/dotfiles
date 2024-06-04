@@ -1,5 +1,7 @@
 #!/bin/sh
 
-/usr/local/bin/dmenu-wl $* -nb '#2b3339' -nf '#d3c6aa' -sb '#d3c6aa' -sf '#212736' -i -fn 'DroidSansM Nerd Font'
+MONITOR=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused==true).name')
+
+/usr/local/bin/dmenu-wl $* -nb '#2b3339' -nf '#d3c6aa' -sb '#d3c6aa' -sf '#212736' -i -m "$MONITOR" -fn 'DroidSansM Nerd Font'
 
 exit $?
