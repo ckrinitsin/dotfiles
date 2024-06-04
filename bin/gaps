@@ -1,0 +1,60 @@
+#!/usr/bin/python3
+
+# 
+# Interactive gaps, depending on number of applications on a workspace
+#
+
+import i3ipc
+i3 = i3ipc.Connection()
+print("starting")
+
+#################### -- window management -- ####################
+def two_gap():
+    i3.command('gaps left current set 200')
+    i3.command('gaps right current set 200')
+    
+def one_gap():    
+    i3.command('gaps right current set 400')
+    i3.command('gaps left current set 400')
+
+def remove_gaps():
+    i3.command('gaps left current set 0')
+    i3.command('gaps right current set 0')    
+   
+def make_window_normal(workspace):
+    i3.command('fullscreen disable')
+    
+def make_window_fullscreen(workspace):
+    i3.command('fullscreen enable')
+    
+def manage_new_close_window(self, e):
+    focused = i3.get_tree().find_focused()
+    workspace = focused.workspace()
+    monitor = workspace.ipc_data['output']
+
+    if monitor != "HDMI-A-1":
+        return
+
+    y = len(workspace.nodes)
+    
+    if y > 2:
+        remove_gaps()
+        return
+
+    if y == 2:
+        two_gap()
+        return
+    
+    one_gap()
+    return
+########################### -- end -- ###########################
+
+
+i3.on('window::new', manage_new_close_window)
+i3.on('window::close', manage_new_close_window)
+i3.on('window::move', manage_new_close_window)
+i3.on('window::focus', manage_new_close_window)
+i3.on('workspace::empty', manage_new_close_window)
+i3.on('workspace::init', manage_new_close_window)
+
+i3.main()

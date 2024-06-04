@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
 
-sudo pacman -S lua-language-server clang rust-analyzer
+sudo pacman -S lua-language-server clang rust-analyzer texlab

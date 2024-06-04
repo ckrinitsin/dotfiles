@@ -109,18 +109,18 @@ bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
 bindsym $mod+Shift+t exec thunderbird
 bindsym $mod+Shift+w exec qutebrowser
 bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+e exec ~/.config/waybar/scripts/powermenu
-bindsym $mod+p exec ~/.config/waybar/scripts/blur-lock
+bindsym $mod+Shift+e exec powermenu
+bindsym $mod+p exec blur-lock
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # multimedia
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/waybar/scripts/volume_brightness.sh brightness_up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/waybar/scripts/volume_brightness.sh brightness_down
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/waybar/scripts/volume_brightness.sh volume_up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/waybar/scripts/volume_brightness.sh volume_down
-bindsym XF86AudioMute exec --no-startup-id ~/.config/waybar/scripts/volume_brightness.sh volume_mute
+bindsym XF86MonBrightnessUp exec --no-startup-id volume_brightness brightness_up
+bindsym XF86MonBrightnessDown exec --no-startup-id volume_brightness brightness_down
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume_brightness volume_up
+bindsym XF86AudioLowerVolume exec --no-startup-id volume_brightness volume_down
+bindsym XF86AudioMute exec --no-startup-id volume_brightness volume_mute
 bindsym XF86AudioMicMute exec amixer sset Capture toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
@@ -129,7 +129,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Ctrl+s exec screenshot
 
 # custom scripts
-bindsym $mod+Shift+o exec zathura-fzf /home/chris/uni/
+bindsym $mod+Shift+o exec zathura-fzf /home/chris/uni/ /home/chris/downloads
 bindsym $mod+Shift+b exec bluetooth-devices
 bindsym $mod+w exec qtb-load-session
 bindsym $mod+Shift+s exec run-spotify-player
