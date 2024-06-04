@@ -143,6 +143,7 @@ exec_always --no-startup-id random-wallpaper
 
 input * { 
     xkb_layout "eu" 
+    tap enabled
 }
 
 bar {
