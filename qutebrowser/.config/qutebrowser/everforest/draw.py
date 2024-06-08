@@ -1,4 +1,4 @@
-def blood(c, options = {}):
+def color(c, options = {}):
     palette = {
         'background': '#2b3339',
         'background-alt': '#2d353b', 
@@ -16,13 +16,14 @@ def blood(c, options = {}):
         'pink': '#83c092',
         'purple': '#d699b6',
         'red': '#e67e80',
-        'yellow': '#dbbc7f'
+        'yellow': '#dbbc7f',
+        'black': '#000000'
     }   
 
-    spacing = options.get('spacing', {
-        'vertical': 5,
-        'horizontal': 5
-    })
+    spacing = {
+        'vertical': 6,
+        'horizontal': 8
+    }
 
     padding = options.get('padding', {
         'top': spacing['vertical'],
@@ -289,3 +290,11 @@ def blood(c, options = {}):
     c.tabs.indicator.width = 1
     c.tabs.favicons.scale = 1
 
+    c.colors.contextmenu.menu.bg = palette['background'] 
+    c.colors.contextmenu.selected.bg = palette['foreground']
+
+    c.colors.contextmenu.menu.fg = palette['foreground']
+    c.colors.contextmenu.selected.fg = palette['background']
+
+    c.colors.contextmenu.disabled.bg = palette['selection']
+    c.colors.contextmenu.disabled.fg = palette['black']

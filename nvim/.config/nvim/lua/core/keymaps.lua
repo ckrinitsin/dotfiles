@@ -14,3 +14,6 @@ vim.keymap.set('n', '<C-j>', ':bp<CR>', {})
 vim.keymap.set('n', '<C-k>', ':bn<CR>', {})
 
 vim.keymap.set('n', '<leader>ma', ':w<CR>:make<CR>', {})
+
+vim.keymap.set('x', 'p', 'P', {});
+vim.keymap.set('x', 'P', 'p', {});
