@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 
-# Takes a screenshot with grimshot, in clipboard or in home directory
+# Takes a screenshot with grimshot, in clipboard or in given directory
 #
 
 MODE=$(printf "copy\nsave" | dmenu)
@@ -13,9 +13,29 @@ fi
 
 case "$MODE" in 
   *save*)
-      grimshot save area ~/"screenshot-$(date +%F)-$(date +%T).png" && notify-send "screenshot-$(date +%F)-$(date +%T).png" "saved" 
+    cd $HOME
+    while true; do
+        selected_dir=$(ls | dmenu -i)
+        if [ -z "$selected_dir" ]; then
+            exit 0
+        fi
+
+        if [ -d "$selected_dir" ]; then
+            cd "$selected_dir"
+            continue
+        fi 
+
+        if [ -e "$selected_dir" ]; then
+            notify-send "Error: File exists!"
+            exit 0
+        fi 
+
+        break
+    done
+
+    grimshot save area "$PWD/$selected_dir.png" && notify-send "$PWD/$selected_dir.png" "saved" 
     ;;
   *copy*)
-      grimshot copy area && notify-send "Screenshot copied" 
+    grimshot copy area && notify-send "Screenshot copied" 
     ;;
 esac

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Get the currently focused output
+current_output=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
+
+# Get the list of outputs
+outputs=($(swaymsg -t get_outputs | jq -r '.[].name'))
+
+# Find the index of the currently focused output
+for i in "${!outputs[@]}"; do
+    if [[ "${outputs[$i]}" == "$current_output" ]]; then
+        current_index=$i
+        break
+    fi
+done
+
+# Calculate the index of the next output
+next_index=$(( (current_index + 1) % ${#outputs[@]} ))
+
+# Focus the next output
+swaymsg focus output "${outputs[$next_index]}"

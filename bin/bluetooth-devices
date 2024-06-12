@@ -10,9 +10,9 @@ connect_bluetooth() {
     local DEVICE=$2
     if bluetoothctl connect $MAC | grep -q 'successful' 
     then
-        notify-send -t 5000 -r 2954 -u normal "  Connected successfully from" "     $DEVICE"
+        notify-send -t 5000 -r 2954 -u normal "  Connected successfully to" "     $DEVICE"
     else 
-        notify-send -t 5000 -r 2954 -u normal "  Couldn't connect from" "     $DEVICE"
+        notify-send -t 5000 -r 2954 -u normal "  Couldn't connect to" "     $DEVICE"
     fi
 }
 
