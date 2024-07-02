@@ -1,0 +1,2 @@
+layout src
+focus cmd

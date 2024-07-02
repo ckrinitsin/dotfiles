@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 
-PICTURE=/tmp/swaylock.png
-SCREENSHOT="grim $PICTURE"
-
-BLUR="5x4"
-
-$SCREENSHOT
-convert $PICTURE -blur $BLUR $PICTURE
-swaylock -i $PICTURE
-rm $PICTURE
+swaylock \
+	--screenshots \
+	--clock \
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	--ring-color 83c092 \
+	--key-hl-color a7c080 \
+	--line-color 00000000 \
+	--inside-color 00000090 \
+	--separator-color 00000000 \
+    --text-color d3c6aa \
+    --inside-wrong-color e67e80 \
+    --inside-ver-color 7fbbb3 \
+    --line-ver-color 3a515d \
+    --ring-ver-color 3a515d \
+	--grace 2
