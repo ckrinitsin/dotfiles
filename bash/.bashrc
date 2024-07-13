@@ -15,6 +15,7 @@ alias :q="exit"
 alias ..="cd .."
 alias v="vim"
 alias reload-gpg="gpg-connect-agent reloadagent /bye"
+alias yay="paru"
 
 # Arrow bindings
 bind '"\e[A":history-search-backward'
