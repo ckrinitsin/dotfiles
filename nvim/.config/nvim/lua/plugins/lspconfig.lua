@@ -45,6 +45,10 @@ return {
                 capabilities = require('cmp_nvim_lsp').default_capabilities(),
             }
 
+            require'lspconfig'.gdscript.setup{
+                capabilities = require('cmp_nvim_lsp').default_capabilities(),
+            }
+
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
                 callback = function(ev)
