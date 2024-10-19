@@ -15,6 +15,8 @@ alias :q="exit"
 alias ..="cd .."
 alias v="vim"
 alias reload-gpg="gpg-connect-agent reloadagent /bye"
+alias psaroot="ssh -i ~/.ssh/psa -p 60500 root@psa.in.tum.de"
+alias psauser="ssh -i ~/.ssh/psa -p 60500 ge87liq@psa.in.tum.de"
 
 # Arrow bindings
 bind '"\e[A":history-search-backward'
