@@ -4,7 +4,7 @@
 # Takes a screenshot with grimshot, in clipboard or in given directory
 #
 
-MODE=$(printf "copy\nsave" | dmenu)
+MODE=$(printf "save\ncopy" | dmenu)
 
 # If dmenu was cancelled, exit program
 if [ $? -ne 0 ]; then
@@ -13,27 +13,29 @@ fi
 
 case "$MODE" in 
   *save*)
-    cd $HOME
-    while true; do
-        selected_dir=$(ls | dmenu -i)
-        if [ -z "$selected_dir" ]; then
-            exit 0
-        fi
+    cd $HOME/downloads/screenshots
+    # while true; do
+    #     selected_dir=$(ls | dmenu -i)
+    #     if [ -z "$selected_dir" ]; then
+    #         exit 0
+    #     fi
+    #
+    #     if [ -d "$selected_dir" ]; then
+    #         cd "$selected_dir"
+    #         continue
+    #     fi 
+    #
+    #     if [ -e "$selected_dir" ]; then
+    #         notify-send "Error: File exists!"
+    #         exit 0
+    #     fi 
+    #
+    #     break
+    # done
 
-        if [ -d "$selected_dir" ]; then
-            cd "$selected_dir"
-            continue
-        fi 
-
-        if [ -e "$selected_dir" ]; then
-            notify-send "Error: File exists!"
-            exit 0
-        fi 
-
-        break
-    done
-
-    grimshot save area "$PWD/$selected_dir.png" && notify-send "$PWD/$selected_dir.png" "saved" 
+    # grimshot save area "$PWD/$selected_dir.png" && notify-send "$PWD/$selected_dir.png" "saved" 
+    timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+    grimshot save area "$timestamp.png" && notify-send "$timestamp.png" "saved" 
     ;;
   *copy*)
     grimshot copy area && notify-send "Screenshot copied" 

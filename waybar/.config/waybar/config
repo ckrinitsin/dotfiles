@@ -4,7 +4,7 @@
     "height": 20, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock"],
+    "modules-right": ["custom/pomodoro", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock"],
 
     "keyboard-state": {
         "numlock": true,
@@ -112,7 +112,7 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "   {bandwidthTotalBytes}",
-        "format-ethernet": "  {ipaddr}/{cidr}",
+        "format-ethernet": "  {bandwidthTotalBytes}",
         "format-linked": "  {ifname} (No IP)",
         "format-disconnected": " ⚠",
         "on-click": "alacritty -e nmtui",
@@ -155,6 +155,13 @@
 		"exec": "find $HOME/.local/share/mail/*/INBOX/new/ -type f | wc -l",
 		"interval": 60,
         "on-click": "thunderbird"
-	}
+	},
+    "custom/pomodoro": {
+        "format": "{} ",
+        "return-type": "json",
+        "exec": "waybar-module-pomodoro",
+        "on-click": "waybar-module-pomodoro toggle",
+        "on-click-right": "waybar-module-pomodoro reset",
+    }
 }
 
