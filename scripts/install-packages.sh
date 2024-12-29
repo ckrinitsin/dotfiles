@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # install packages
-sudo pacman -S bash-completion fzf grim pacman-contrib python-tldextract pass gnupg base-devel libnotify wl-clipboard qt6-wayland xorg-server-xwayland nerd-fonts zoxide waybar bison startup-notification flex wayland-protocols pkg-config cmake gcc alacritty dunst neovim qutebrowser starship xdg-user-dirs zathura zathura-pdf-mupdf meson ninja
+sudo pacman -S bash-completion fzf grim pacman-contrib python-tldextract pass gnupg base-devel libnotify wl-clipboard qt6-wayland xorg-server-xwayland nerd-fonts zoxide waybar bison startup-notification flex wayland-protocols pkg-config cmake gcc alacritty dunst neovim qutebrowser starship xdg-user-dirs zathura zathura-pdf-mupdf meson ninja inotify-tools
 
 sudo pacman -S pipewire pipewire-audio pipewire-alsa pipewire-pulse pavucontrol
 
