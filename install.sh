@@ -8,11 +8,26 @@ cd $SCRIPTPATH
 # Ignore list
 IGNORE=("bin" "wallpaper" "install.sh" ".git" "scripts")
 
-# Install important packages
-sudo pacman -S stow
+printf "Start installing dotfiles\n\n"
+printf "Ignore: %s\n" "${IGNORE[@]}"
+printf "\n"
+
+# Install stow, if not installed
+pacman -Q | grep stow 1>/dev/null
+if [ $? != 0 ]; then
+    printf "Installing stow\n"
+    sudo pacman -S stow
+else
+    printf "Stow is already installed\n"
+fi
 
 # Prevent from symlinking whole directory
-mkdir ~/.gnupg
+if [ ! -d "/home/chris/.gnupg" ]; then
+    printf "Creating ~/.gnupg\n\n"
+    mkdir ~/.gnupg
+else
+    printf "~/.gnupg is already available\n\n"
+fi
 
 # Setting up all the symlinks
 max=${#IGNORE[@]}
@@ -33,6 +48,9 @@ for f in *; do
 
     # Create symlink if not ignored
 	if [[ $ignored == false ]]; then
+        printf "Symlink for $f created\n"
 		stow "$f"
 	fi
 done
+
+printf "\nDone\n"
