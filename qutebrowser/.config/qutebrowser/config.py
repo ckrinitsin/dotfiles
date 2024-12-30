@@ -7,6 +7,7 @@ import everforest.draw
 everforest.draw.color(c)
 
 config.set("colors.webpage.darkmode.enabled", True)
+config.set("input.mode_override", "passthrough", "cad.onshape.com")
 
 # Bindings
 config.bind('J', ':tab-prev')
