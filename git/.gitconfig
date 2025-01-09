@@ -1,5 +1,8 @@
 [user]
 	email = code@krinitsin.xyz
 	name = Christian Krinitsin
+	signingkey = C070FC6EAB05AB36
 [pull]
 	rebase = true
+[commit]
+	gpgsign = true
