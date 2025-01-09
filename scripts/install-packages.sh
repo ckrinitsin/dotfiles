@@ -1,13 +1,32 @@
 #!/usr/bin/bash
 
-# install packages
-sudo pacman -S bash-completion fzf grim pacman-contrib python-tldextract pass gnupg base-devel libnotify wl-clipboard qt6-wayland xorg-server-xwayland nerd-fonts zoxide waybar bison startup-notification flex wayland-protocols pkg-config cmake gcc alacritty dunst neovim qutebrowser starship xdg-user-dirs zathura zathura-pdf-mupdf meson ninja inotify-tools
+# list of all needed pacman packages
+declare -a pacman=("bash-completion" "fzf" "grim" "pacman-contrib" "python-tldextract" "pass" "gnupg" "base-devel" "libnotify" "wl-clipboard" "qt6-wayland" "xorg-xwayland" "nerd-fonts" "zoxide" "waybar" "bison" "startup-notification" "flex" "wayland-protocols" "pkgconf" "cmake" "gcc" "alacritty" "dunst" "neovim" "qutebrowser" "starship" "xdg-user-dirs" "zathura" "zathura-pdf-poppler" "meson" "ninja" "inotify-tools" "pipewire" "pipewire-audio" "pipewire-alsa" "pipewire-pulse" "pavucontrol" "texlive-basic" "texlive-bibtexextra" "texlive-latex" "texlive-mathscience" "texlive-latexrecommended" "texlive-latexextra" "texlive-binextra")
 
-sudo pacman -S pipewire pipewire-audio pipewire-alsa pipewire-pulse pavucontrol
+# list of all needed aur packages
+declare -a aur=("grimshot")
 
-sudo pacman -S texlive-basic texlive-bibtexextra texlive-latex texlive-mathscience texlive-latexrecommended texlive-latexextra texlive-binextra
+for package in "${pacman[@]}"
+do
+    pacman -Q | grep "$package" 1>/dev/null
+    if [ $? != 0 ]; then
+        printf "Installing '$package'\n"
+        sudo pacman -S "$package"
+    else
+        printf "'$package' is already installed\n"
+    fi
+done
 
-yay -S grimshot
+for package in "${aur[@]}"
+do
+    pacman -Q | grep "$package" 1>/dev/null
+    if [ $? != 0 ]; then
+        printf "Installing '$package'\n"
+        sudo pacman -S "$package"
+    else
+        printf "'$package' is already installed\n"
+    fi
+done
 
 # install rofi and dmenu for wayland
 git clone https://github.com/lbonn/rofi.git /tmp/rofi
@@ -15,6 +34,7 @@ cd /tmp/rofi
 meson setup build
 ninja -C build
 sudo ninja -C build install
+
 git clone https://git.sr.ht/~fabiancodes/dmenu-wayland /tmp/dmenu-wl
 cd /tmp/dmenu-wl
 mkdir build
