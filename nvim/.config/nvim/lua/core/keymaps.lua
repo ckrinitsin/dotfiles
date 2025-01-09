@@ -17,3 +17,5 @@ vim.keymap.set('n', '<leader>ma', ':w<CR>:make<CR>', {})
 
 vim.keymap.set('x', 'p', 'P', {});
 vim.keymap.set('x', 'P', 'p', {});
+
+vim.keymap.set('n', '<leader>fm', ':lua vim.lsp.buf.format()<CR>', {})

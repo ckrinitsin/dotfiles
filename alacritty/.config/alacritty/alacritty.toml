@@ -37,3 +37,8 @@ size = 12.0
 
 [scrolling]
 history = 2000
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
