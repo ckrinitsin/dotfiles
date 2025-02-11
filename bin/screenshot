@@ -14,30 +14,10 @@ fi
 case "$MODE" in 
   *save*)
     cd $HOME/downloads/screenshots
-    # while true; do
-    #     selected_dir=$(ls | dmenu -i)
-    #     if [ -z "$selected_dir" ]; then
-    #         exit 0
-    #     fi
-    #
-    #     if [ -d "$selected_dir" ]; then
-    #         cd "$selected_dir"
-    #         continue
-    #     fi 
-    #
-    #     if [ -e "$selected_dir" ]; then
-    #         notify-send "Error: File exists!"
-    #         exit 0
-    #     fi 
-    #
-    #     break
-    # done
-
-    # grimshot save area "$PWD/$selected_dir.png" && notify-send "$PWD/$selected_dir.png" "saved" 
     timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
-    grimshot save area "$timestamp.png" && notify-send "$timestamp.png" "saved" 
+    /usr/share/sway-contrib/grimshot save area "$timestamp.png"
     ;;
   *copy*)
-    grimshot copy area && notify-send "Screenshot copied" 
+    /usr/share/sway-contrib/grimshot copy area
     ;;
 esac
