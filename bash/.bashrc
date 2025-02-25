@@ -21,6 +21,7 @@ alias psa4="ssh -i ~/.ssh/psa -p 60504 ge87liq@psa.in.tum.de"
 alias psa5="ssh -i ~/.ssh/psa -p 60505 ge87liq@psa.in.tum.de"
 alias psa6="ssh -i ~/.ssh/psa -p 60506 ge87liq@psa.in.tum.de"
 alias psa7="ssh -i ~/.ssh/psa -p 60507 ge87liq@psa.in.tum.de"
+alias psa8="ssh -i ~/.ssh/psa -p 60508 ge87liq@psa.in.tum.de"
 
 # Arrow bindings
 bind '"\e[A":history-search-backward'

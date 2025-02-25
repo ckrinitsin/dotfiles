@@ -29,7 +29,7 @@ return {
         config = function()
             require'lspconfig'.lua_ls.setup{
                 capabilities = require('cmp_nvim_lsp').default_capabilities(),
-                settings = {  Lua = {  diagnostics = {  globals = { 'vim', 'c2' }  }  }  }
+                settings = {  Lua = {  diagnostics = {  globals = { 'vim', 'c2', 'love' }  }  }  }
             }
 
             require'lspconfig'.clangd.setup{

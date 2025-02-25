@@ -4,7 +4,7 @@
     "height": 20, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-right": ["custom/pomodoro", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock"],
+    "modules-right": ["custom/pomodoro", "custom/mail", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock", "tray"],
 
     "keyboard-state": {
         "numlock": true,
@@ -152,7 +152,7 @@
     },	
     "custom/mail": {
         "format": "  {}",
-		"exec": "find $HOME/.local/share/mail/*/INBOX/new/ -type f | wc -l",
+		"exec": "curl -X GET http://krinitsin.com:5000/api/get_mail_count",
 		"interval": 60,
         "on-click": "thunderbird"
 	},

@@ -149,7 +149,7 @@ bindsym $mod+Shift+s exec run-spotify-player
 bindsym $mod+Shift+p exec passmenu
 bindsym $mod+Ctrl+w exec random-wallpaper
 bindsym $mod+u exec toggle_monitor_focus
-bindsym $mod+Shift+m exec prismlauncher -l 1.21.4 -s krinitsin.xyz
+bindsym $mod+Shift+m exec prismlauncher -l 1.21.4 -s krinitsin.com
 bindsym $mod+Shift+g exec steam-launcher
 
 # autostart
