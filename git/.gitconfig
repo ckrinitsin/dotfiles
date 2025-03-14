@@ -1,7 +1,7 @@
 [user]
 	email = code@krinitsin.xyz
 	name = Christian Krinitsin
-	signingkey = C070FC6EAB05AB36
+	signingkey = 8EE1C15CF8936C9B
 [pull]
 	rebase = true
 [commit]

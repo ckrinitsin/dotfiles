@@ -152,7 +152,7 @@
     },	
     "custom/mail": {
         "format": "  {}",
-		"exec": "curl -X GET http://krinitsin.com:5000/api/get_mail_count",
+		"exec": "curl -X GET http://krinitsin.com:5000/mail/api/get_mail_count",
 		"interval": 10,
         "on-click": "thunderbird"
 	},
