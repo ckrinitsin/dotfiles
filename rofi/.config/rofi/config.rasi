@@ -1,2 +1,7 @@
 //@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-@theme "/usr/local/share/rofi/themes/Arc-Dark.rasi"
+@import "~/.config/rofi/arc_dark_transparent_colors.rasi"
+
+configuration {
+    font:                "DroidSansM Nerd Font 11";
+    show-icons:          true;
+}

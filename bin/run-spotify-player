@@ -1,5 +1,0 @@
-#!/bin/sh
-
-ps -A | grep -q 'spotify_player' || spotify_player -d
-
-alacritty -e spotify_player

@@ -117,6 +117,7 @@ case-indicator {
 }
 entry {
     spacing:    0;
+    placeholder: "";
     text-color: @normal-foreground;
 }
 prompt {
