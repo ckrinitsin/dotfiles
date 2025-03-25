@@ -13,8 +13,6 @@ config.set("input.mode_override", "passthrough", "cad.onshape.com")
 config.bind('J', ':tab-prev')
 config.bind('K', ':tab-next')
 config.bind('wq', 'session-save ;; close')
-config.bind('aj', 'spawn --userscript qute-pass')
-config.bind('ak', 'spawn --userscript qute-pass --password-only')
 
 c.content.javascript.clipboard="access-paste"
 

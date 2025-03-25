@@ -142,11 +142,11 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Ctrl+s exec screenshot
 
 # custom scripts
-bindsym $mod+Shift+o exec zathura-fzf /home/chris/uni/ /home/chris/downloads
+bindsym $mod+Shift+o exec zathura-fzf /home/chris/uni/ /home/chris/downloads /home/chris/projects
 bindsym $mod+Shift+b exec bluetooth-devices
 bindsym $mod+w exec qtb-load-session
 bindsym $mod+Shift+s exec run-spotify-player
-bindsym $mod+Shift+p exec passmenu
+bindsym $mod+Shift+p exec rofi-rbw
 bindsym $mod+Ctrl+w exec random-wallpaper
 bindsym $mod+u exec toggle_monitor_focus
 bindsym $mod+Shift+m exec prismlauncher -l 1.21.4 -s krinitsin.com
@@ -156,7 +156,6 @@ bindsym $mod+Shift+g exec steam-launcher
 exec --no-startup-id /usr/bin/dunst
 exec --no-startup-id /usr/bin/syncthing --no-browser
 exec_always --no-startup-id random-wallpaper
-exec --no-startup-id prepinentry
 
 input * { 
     xkb_layout "eu" 
