@@ -15,3 +15,5 @@ settings:
   qt.args:
     global:
     - ppapi-widevine-path=/usr/lib/qt6/plugins/ppapi/libwidevinecdm.so
+  url.start_pages:
+    global: https://dash.krinitsin.com
