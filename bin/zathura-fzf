@@ -2,7 +2,7 @@
 
 find "$@" -type f -iname '*pdf' > ~/.pdffiles.txt
 
-alacritty -e sh -c 'cat ~/.pdffiles.txt | fzf > ~/.zathurafile.txt'
+cat ~/.pdffiles.txt | rofi -dmenu  > ~/.zathurafile.txt
 
 selected_file=$(cat ~/.zathurafile.txt)
 
