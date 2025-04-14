@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # list of all needed pacman packages
-declare -a pacman=("rbw" "rofi-rbw" "wtype" "swaybg" "syncthing" "openssh" "lazygit" "platformio-core" "platformio-core-udev" "whois" "bash-completion" "fzf" "grim" "pacman-contrib" "sway-contrib" "python-tldextract" "gnupg" "base-devel" "libnotify" "wl-clipboard" "python-pyperclip" "qt6-wayland" "xorg-xwayland" "nerd-fonts" "zoxide" "waybar" "bison" "startup-notification" "flex" "wayland-protocols" "pkgconf" "cmake" "gcc" "alacritty" "dunst" "neovim" "qutebrowser" "starship" "xdg-user-dirs" "zathura" "zathura-pdf-mupdf" "meson" "ninja" "inotify-tools" "pipewire" "pipewire-audio" "pipewire-alsa" "pipewire-pulse" "pavucontrol" "texlive-basic" "texlive-bibtexextra" "texlive-latex" "texlive-mathscience" "texlive-latexrecommended" "texlive-latexextra" "texlive-binextra")
+declare -a pacman=("unzip" "rbw" "rofi-rbw" "wtype" "swaybg" "syncthing" "openssh" "lazygit" "platformio-core" "platformio-core-udev" "whois" "bash-completion" "fzf" "grim" "pacman-contrib" "sway-contrib" "python-tldextract" "gnupg" "base-devel" "libnotify" "wl-clipboard" "python-pyperclip" "qt6-wayland" "xorg-xwayland" "nerd-fonts" "zoxide" "waybar" "bison" "startup-notification" "flex" "wayland-protocols" "pkgconf" "cmake" "gcc" "alacritty" "dunst" "neovim" "qutebrowser" "starship" "xdg-user-dirs" "zathura" "zathura-pdf-mupdf" "meson" "ninja" "inotify-tools" "pipewire" "pipewire-audio" "pipewire-alsa" "pipewire-pulse" "pavucontrol" "texlive-basic" "texlive-bibtexextra" "texlive-latex" "texlive-mathscience" "texlive-latexrecommended" "texlive-latexextra" "texlive-binextra")
 
 # list of all needed aur packages
 declare -a aur=( )
@@ -31,7 +31,7 @@ done
 git clone https://github.com/plattfot/pinentry-rofi.git /tmp/pin-rofi
 cd /tmp/pin-rofi
 autoreconf -vif && ./configure && make check
-sudo cp scripts/pinentry-rofi /usr/bin/
+sudo cp /tmp/pin-rofi/scripts/pinentry-rofi /usr/bin/
 
 # install rofi and dmenu for wayland
 git clone https://github.com/lbonn/rofi.git /tmp/rofi
