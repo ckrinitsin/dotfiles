@@ -1,0 +1,13 @@
+dialect = "uk"
+timezone = "local"
+auto_sync = true
+update_check = true
+sync_address = "https://atuin.krinitsin.com"
+sync_frequency = "10m"
+search_mode = "fuzzy"
+
+[sync]
+records = true
+
+[dotfiles]
+enabled = false

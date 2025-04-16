@@ -22,3 +22,8 @@ bind '"\e[B":history-search-forward'
 # Start programs
 eval "$(starship init bash)"
 eval "$(zoxide init --cmd='cd' bash)"
+
+if [[ -f ~/.bash-preexec.sh ]]; then
+    source ~/.bash-preexec.sh
+    eval "$(atuin init bash)"
+fi
