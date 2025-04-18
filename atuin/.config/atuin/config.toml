@@ -5,6 +5,7 @@ update_check = true
 sync_address = "https://atuin.krinitsin.com"
 sync_frequency = "10m"
 search_mode = "fuzzy"
+enter_accept = true
 
 [sync]
 records = true
