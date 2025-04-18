@@ -45,7 +45,7 @@ return {
                 capabilities = require('cmp_nvim_lsp').default_capabilities(),
             }
 
-            require'lspconfig'.gdscript.setup{
+            require'lspconfig'.gopls.setup{
                 capabilities = require('cmp_nvim_lsp').default_capabilities(),
             }
 

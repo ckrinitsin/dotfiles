@@ -1,5 +1,6 @@
 # Export own script path
 export PATH=$HOME/.dotfiles/bin/:/usr/local/bin/:$PATH
+export GOPATH=$HOME/.go
 
 # Aliases
 alias ls='ls --color=auto'

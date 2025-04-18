@@ -5,7 +5,7 @@ return {
         build = ":TSUpdate",
         config = function ()
           require("nvim-treesitter.configs").setup({
-              ensure_installed = { "c", "lua", "vim", "rust", "toml", "latex" },
+              ensure_installed = { "c", "lua", "vim", "rust", "toml", "latex", "html", "go"},
               sync_install = false,
               highlight = { enable = true },
               indent = { enable = true },
