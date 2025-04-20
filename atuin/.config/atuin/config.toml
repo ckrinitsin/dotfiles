@@ -6,6 +6,7 @@ sync_address = "https://atuin.krinitsin.com"
 sync_frequency = "10m"
 search_mode = "fuzzy"
 enter_accept = true
+inline_height = 1
 
 [sync]
 records = true
