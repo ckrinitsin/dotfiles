@@ -1,6 +1,7 @@
 # Export own script path
 export PATH=$HOME/.dotfiles/bin/:/usr/local/bin/:$PATH
 export GOPATH=$HOME/.go
+export MANPAGER='nvim +Man!'
 
 # Aliases
 alias ls='ls --color=auto'
