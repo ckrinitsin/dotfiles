@@ -152,6 +152,8 @@ bindsym $mod+u exec toggle_monitor_focus
 bindsym $mod+Shift+m exec prismlauncher -l 1.21.4 -s krinitsin.com
 bindsym $mod+Shift+g exec steam-launcher
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # autostart
 exec --no-startup-id /usr/bin/dunst
 exec --no-startup-id /usr/bin/syncthing --no-browser
