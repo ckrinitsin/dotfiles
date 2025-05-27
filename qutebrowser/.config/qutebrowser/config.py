@@ -6,7 +6,6 @@ c = c
 import everforest.draw
 everforest.draw.color(c)
 
-config.set("colors.webpage.darkmode.enabled", True)
 config.set("input.mode_override", "passthrough", "cad.onshape.com")
 
 # Bindings
@@ -21,13 +20,9 @@ config.set("downloads.location.suggestion", "both")
 c.editor.command = ["alacritty", "-e", "nvim", "{}"]
 
 c.colors.webpage.preferred_color_scheme = 'dark'
-c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.algorithm = "lightness-cielab"
-c.colors.webpage.darkmode.threshold.foreground = 150
-c.colors.webpage.darkmode.threshold.background = 100
-c.colors.webpage.darkmode.policy.images = 'always'
 
-c.aliases['qr'] = 'spawn --userscript qr'
+config.bind(',m', 'spawn mpv {url}')
+config.bind(',M', 'hint links spawn mpv {hint-url}')
 
 # Block ads in yt
 def filter_yt(info: interceptor.Request):
