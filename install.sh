@@ -25,6 +25,7 @@ fi
 if [ ! -d "/home/chris/.gnupg" ]; then
     printf "Creating ~/.gnupg\n\n"
     mkdir ~/.gnupg
+    chmod 700 ~/.gnupg
 else
     printf "~/.gnupg is already available\n\n"
 fi
