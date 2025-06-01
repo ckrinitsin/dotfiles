@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+out=$(sudo wg)
+
+if [ "$1" == "-i" ]
+then
+    if [ -n "$out" ]
+    then
+        notify-send "vpn is activated"
+    else
+        notify-send "vpn is deactivated"
+    fi
+    exit
+fi
+
+if [ -n "$out" ]
+then
+    sudo wg-quick down /etc/wireguard/schwitz.conf
+    echo "vpn is deactivated"
+else
+    sudo wg-quick up /etc/wireguard/schwitz.conf
+    echo "vpn is activated"
+fi
