@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd(
     {
         pattern = "*.tex",
         callback = function()
-            vim.cmd("silent make --silent")
+            -- vim.cmd("silent make --silent")
         end,
     }
 )
