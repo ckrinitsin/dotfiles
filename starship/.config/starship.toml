@@ -11,6 +11,7 @@ $nodejs\
 $rust\
 $golang\
 $php\
+$nix_shell\
 [](fg:#212736 bg:#2b3339)\
 $time\
 [ ](fg:#2b3339)\
@@ -61,6 +62,10 @@ format = '[[ $symbol ($version) ](fg:#a7c080 bg:#212736)]($style)'
 symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#a7c080 bg:#212736)]($style)'
+
+[nix_shell]
+symbol = ""
+format = '[ $symbol $name](fg:#a7c080 bg:#212736)'
 
 [time]
 disabled = false
