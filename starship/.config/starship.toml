@@ -65,6 +65,7 @@ format = '[[ $symbol ($version) ](fg:#a7c080 bg:#212736)]($style)'
 
 [nix_shell]
 symbol = ""
+heuristic = true
 format = '[ $symbol $name](fg:#a7c080 bg:#212736)'
 
 [time]
