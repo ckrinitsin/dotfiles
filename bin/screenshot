@@ -4,6 +4,7 @@
 # Takes a screenshot with grimshot, in clipboard or in given directory
 #
 
+DIR="$HOME/downloads/screenshots"
 MODE=$(printf "save\ncopy" | dmenu)
 
 # If dmenu was cancelled, exit program
@@ -11,9 +12,11 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+mkdir -p $DIR
+
 case "$MODE" in 
   *save*)
-    cd $HOME/downloads/screenshots
+    cd $DIR
     timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
     /usr/share/sway-contrib/grimshot save area "$timestamp.png"
     ;;
