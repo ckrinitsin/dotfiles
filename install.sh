@@ -6,7 +6,7 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 cd $SCRIPTPATH
 
 # Ignore list
-IGNORE=("bin" "wallpaper" "install.sh" ".git" "scripts" "git")
+IGNORE=("bin" "wallpaper" "install.sh" ".git" "scripts" "git" "nvim")
 
 printf "Start installing dotfiles\n\n"
 printf "Ignore: %s\n" "${IGNORE[@]}"
