@@ -7,7 +7,6 @@ vim.opt.backup=false
 vim.opt.writebackup=false
 vim.opt.updatetime=300
 vim.opt.signcolumn="yes"
-
 vim.opt.tabstop = 4                 -- number of visual spaces per TAB
 vim.opt.softtabstop = 4             -- number of spacesin tab when editing
 vim.opt.shiftwidth = 4              -- insert 4 spaces on a tab
@@ -26,9 +25,9 @@ vim.opt.incsearch = true            -- search as characters are entered
 vim.opt.ignorecase = true           -- ignore case in searches by default
 vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered
 
-vim.o.laststatus    = 0
+vim.o.laststatus    = 0             -- remove statusline
 
-vim.keymap.set("i", "jk", "<Esc>", {})
+vim.cmd('set path+=**')             -- recursive search with find
 
 vim.keymap.set('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
 vim.keymap.set("n", "<space>c", function() vim.ui.input({}, function(c) if c and c~="" then
