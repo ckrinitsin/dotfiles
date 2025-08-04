@@ -29,7 +29,7 @@ disconnect_bluetooth() {
 }
 
 # Opens dmenu prompt, which lets you decide which device you want to connect to / disconnect from
-DEVICE=$(bluetoothctl devices | sed 's/[^ ]* //' | sed 's/[^ ]* //' | dmenu -i)
+DEVICE=$(bluetoothctl devices | grep Device | sed 's/[^ ]* //' | sed 's/[^ ]* //' | dmenu -i)
 
 # If dmenu was cancelled, exit program
 if [ $? -ne 0 ]; then
