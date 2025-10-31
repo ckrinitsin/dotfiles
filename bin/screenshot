@@ -18,9 +18,9 @@ case "$MODE" in
   *save*)
     cd $DIR
     timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
-    /usr/share/sway-contrib/grimshot save area "$timestamp.png"
+    grimshot save area "$timestamp.png"
     ;;
   *copy*)
-    /usr/share/sway-contrib/grimshot copy area
+    grimshot copy area
     ;;
 esac

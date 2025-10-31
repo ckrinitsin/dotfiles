@@ -3,7 +3,7 @@
 # find "$@" -type f -iname '*pdf' > ~/.pdffiles.txt
 fd --type f --extension pdf . $@ > ~/.pdffiles.txt
 
-cat ~/.pdffiles.txt | rofi -dmenu  > ~/.zathurafile.txt
+cat ~/.pdffiles.txt | rofi -i -dmenu  > ~/.zathurafile.txt
 
 selected_file=$(cat ~/.zathurafile.txt)
 
