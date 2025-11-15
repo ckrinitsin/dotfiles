@@ -37,4 +37,4 @@ if len(sys.argv) < 2:
     print("Usage: python organize_mp3s.py <directory_path>")
 else:
     organize_mp3s(sys.argv[1])
-    os.system(f"rsync -avz {sys.argv[1]}/* admin@krinitsin.com:/var/music/")
+    #os.system(f"rsync -avz {sys.argv[1]}/* admin@krinitsin.com:/var/music/")
