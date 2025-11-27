@@ -3,3 +3,8 @@
 [user]
 name = "Christian Krinitsin"
 email = "mail@krinitsin.com"
+
+[signing]
+backend = "gpg"
+behavior = "own"
+key = "799D00D6E6A68B08"
