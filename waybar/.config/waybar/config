@@ -4,7 +4,7 @@
     "height": 20, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
-    "modules-right": ["custom/pomodoro", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock", "tray"],
+    "modules-right": ["custom/zeit", "custom/pomodoro", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock", "tray"],
 
     "keyboard-state": {
         "numlock": true,
@@ -162,6 +162,13 @@
         "exec": "waybar-module-pomodoro",
         "on-click": "waybar-module-pomodoro toggle",
         "on-click-right": "waybar-module-pomodoro reset",
+    },
+    "custom/zeit": {
+      "format": "{} ",
+      "return-type": "json",
+      "exec": "zeit-waybar-dmenu",
+      "on-click": "zeit-waybar-dmenu click",
+      "interval": 1
     }
 }
 
