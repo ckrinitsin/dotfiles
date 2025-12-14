@@ -17,6 +17,8 @@ alias :q="exit"
 alias ..="cd .."
 alias v="vim"
 alias reload-gpg="gpg-connect-agent reloadagent /bye"
+alias zeit-im="zeit import ~/.local/share/zeit-backup/backup"
+alias zeit-ex="zeit export -b -f json > ~/.local/share/zeit-backupt/backup"
 
 # Arrow bindings
 bind '"\e[A":history-search-backward'
