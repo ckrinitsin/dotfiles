@@ -43,3 +43,10 @@ local on_done = function()
 end
 
 vim.fn.jobstart(command, {on_exit = on_done})
+
+vim.lsp.config['rust_ls'] = {
+  cmd = { 'rust-analyzer' },
+  filetypes = { 'rust' },
+}
+vim.lsp.enable('rust_ls')
+vim.lsp.completion.enable()
