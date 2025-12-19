@@ -78,6 +78,8 @@ hi("TabLine", { fg = colors.grey, bg = colors.bg1 })
 hi("TabLineSel", { fg = colors.fg, bg = colors.bg2 })
 hi("TabLineFill", { bg = colors.bg1 })
 
+hi("gitcommitSummary", { fg = colors.green })
+
 hi("@lsp.type.namespace", { fg = colors.aqua })
 hi("@lsp.type.type", { fg = colors.yellow })
 hi("@lsp.type.struct", { fg = colors.yellow })
