@@ -8,3 +8,6 @@ email = "mail@krinitsin.com"
 backend = "gpg"
 behavior = "own"
 key = "799D00D6E6A68B08"
+
+[ui]
+default-command = "log"
