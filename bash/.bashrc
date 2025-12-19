@@ -3,6 +3,7 @@ export PATH=$HOME/.dotfiles/bin/:/usr/local/bin/:$PATH
 export GOPATH=$HOME/.go
 export EDITOR='nvim'
 export MANPAGER='nvim +Man!'
+export PS1="\n\e[1;32m[\u@\h:\w]\$ \e[0m"
 
 # Aliases
 alias ls='ls --color=auto'
@@ -25,7 +26,6 @@ bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
 # Start programs
-eval "$(starship init bash)"
 eval "$(zoxide init --cmd='cd' bash)"
 
 if [[ -f ~/.bash-preexec.sh ]]; then
