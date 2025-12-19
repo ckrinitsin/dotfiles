@@ -29,24 +29,17 @@ vim.o.laststatus    = 0             -- remove statusline
 
 vim.cmd('set path+=**')             -- recursive search with find
 
-vim.keymap.set('n', '<space>y', function() vim.fn.setreg('+', vim.fn.expand('%:p')) end)
+vim.lsp.completion.enable()
+vim.cmd('colorscheme everforest')
+
 vim.keymap.set("n", "<space>c", function() vim.ui.input({}, function(c) if c and c~="" then
   vim.cmd("noswapfile vnew") vim.bo.buftype = "nofile" vim.bo.bufhidden = "wipe"
   vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.fn.systemlist(c)) end end) end)
-
-local plugin_dir = vim.fn.stdpath('config') .. '/pack/vendor/start/everforest-nvim/'
-local command = {'git', 'clone', 'https://github.com/neanias/everforest-nvim.git', plugin_dir}
-
-local on_done = function()
-  vim.cmd('packloadall! | helptags ALL')
-  vim.cmd("colorscheme everforest")
-end
-
-vim.fn.jobstart(command, {on_exit = on_done})
 
 vim.lsp.config['rust_ls'] = {
   cmd = { 'rust-analyzer' },
   filetypes = { 'rust' },
 }
 vim.lsp.enable('rust_ls')
-vim.lsp.completion.enable()
+vim.cmd('autocmd BufWritePre *.rs lua vim.lsp.buf.format({ async = false })')
+
