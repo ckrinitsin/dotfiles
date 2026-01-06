@@ -21,12 +21,10 @@ alias reload-gpg="gpg-connect-agent reloadagent /bye"
 alias zeit-im="zeit import ~/.local/share/zeit-backup/backup"
 alias zeit-ex="zeit export -b -f json > ~/.local/share/zeit-backup/backup"
 
-# Arrow bindings
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
-
 # Start programs
-eval "$(zoxide init --cmd='cd' bash)"
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init --cmd='cd' bash)"
+fi
 
 if [[ -f ~/.bash-preexec.sh ]]; then
     source ~/.bash-preexec.sh

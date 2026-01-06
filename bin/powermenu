@@ -172,7 +172,11 @@ function ask_confirmation() {
   fi
 
   if [ "${confirmed}" == 0 ]; then
-    swaymsg -q "exec --no-startup-id ${menu[${selection}]}"
+    if [ $XDG_CURRENT_DESKTOP == "niri" ]; then 
+        niri msg action spawn-sh -- "${menu[${selection}]}"
+    else
+        swaymsg -q "exec --no-startup-id ${menu[${selection}]}"
+    fi
   fi
 }
 
@@ -181,6 +185,10 @@ if [[ $? -eq 0 && ! -z ${selection} ]]; then
         ${menu_confirm} =~ (^|[[:space:]])"${selection}"($|[[:space:]]) ]]; then
     ask_confirmation
   else
-    swaymsg -q "exec --no-startup-id ${menu[${selection}]}"
+    if [ $XDG_CURRENT_DESKTOP == "niri" ]; then 
+        niri msg action spawn-sh -- "${menu[${selection}]}"
+    else
+        swaymsg -q "exec --no-startup-id ${menu[${selection}]}"
+    fi
   fi
 fi

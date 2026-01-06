@@ -10,4 +10,5 @@ cd ~/.dotfiles/wallpaper
 
 IMAGE=$(find *'.png' | sort -R | tail -n 1) 
 
-swaymsg output "*" bg ~/.dotfiles/wallpaper/$IMAGE fill
+killall swaybg
+swaybg -m fill -i ~/.dotfiles/wallpaper/$IMAGE

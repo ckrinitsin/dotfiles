@@ -11,7 +11,8 @@ config.set("input.mode_override", "passthrough", "cad.onshape.com")
 # Bindings
 config.bind('J', ':tab-prev')
 config.bind('K', ':tab-next')
-config.bind('wq', 'session-save ;; close')
+config.bind("wd", "set content.javascript.enabled false")
+config.bind("we", "set content.javascript.enabled true")
 
 c.content.javascript.clipboard="access-paste"
 

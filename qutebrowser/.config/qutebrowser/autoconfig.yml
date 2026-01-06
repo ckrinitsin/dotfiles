@@ -6,6 +6,8 @@
 
 config_version: 2
 settings:
+  content.javascript.enabled:
+    global: true
   content.notifications.enabled:
     https://www.netflix.com: false
   downloads.prevent_mixed_content:
