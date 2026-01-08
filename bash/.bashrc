@@ -20,6 +20,7 @@ alias v="vim"
 alias reload-gpg="gpg-connect-agent reloadagent /bye"
 alias zeit-im="zeit import ~/.local/share/zeit-backup/backup"
 alias zeit-ex="zeit export -b -f json > ~/.local/share/zeit-backup/backup"
+alias pico8="~/projects/pico-8/pico8 -home ~/projects/pico-8/data"
 
 # Start programs
 if command -v zoxide &> /dev/null; then
