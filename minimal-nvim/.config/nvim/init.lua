@@ -46,6 +46,11 @@ vim.lsp.config['c_cpp_ls'] = {
   filetypes = { 'c', 'cpp' },
 }
 vim.lsp.enable('c_cpp_ls')
+vim.lsp.config['go'] = {
+  cmd = { 'gopls' },
+  filetypes = { 'go' },
+}
+vim.lsp.enable('go')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
