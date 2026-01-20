@@ -1,0 +1,31 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-8KD752.desktop
+message/rfc822=userapp-Thunderbird-8KD752.desktop
+x-scheme-handler/mid=userapp-Thunderbird-8KD752.desktop
+x-scheme-handler/news=userapp-Thunderbird-XN2552.desktop
+x-scheme-handler/snews=userapp-Thunderbird-XN2552.desktop
+x-scheme-handler/nntp=userapp-Thunderbird-XN2552.desktop
+x-scheme-handler/feed=userapp-Thunderbird-4PC852.desktop
+application/rss+xml=userapp-Thunderbird-4PC852.desktop
+application/x-extension-rss=userapp-Thunderbird-4PC852.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-7UP752.desktop
+text/calendar=userapp-Thunderbird-7UP752.desktop
+application/x-extension-ics=userapp-Thunderbird-7UP752.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-7UP752.desktop
+inode/directory=thunar.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-8KD752.desktop;userapp-Thunderbird-IAYNK2.desktop;userapp-Thunderbird-OETMO2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-8KD752.desktop;userapp-Thunderbird-IAYNK2.desktop;userapp-Thunderbird-OETMO2.desktop;
+text/plain=nvim.desktop;
+x-scheme-handler/news=userapp-Thunderbird-XN2552.desktop;
+x-scheme-handler/snews=userapp-Thunderbird-XN2552.desktop;
+x-scheme-handler/nntp=userapp-Thunderbird-XN2552.desktop;
+x-scheme-handler/feed=userapp-Thunderbird-4PC852.desktop;
+application/rss+xml=userapp-Thunderbird-4PC852.desktop;
+application/x-extension-rss=userapp-Thunderbird-4PC852.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-7UP752.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-7UP752.desktop;

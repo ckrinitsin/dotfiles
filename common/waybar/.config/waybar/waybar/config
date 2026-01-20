@@ -1,0 +1,174 @@
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
+    "spacing": 2, // Gaps between modules (4px)
+    "modules-left": ["sway/workspaces", "niri/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-right": ["custom/zeit", "custom/pomodoro", "pulseaudio", "network", "cpu", "memory", "disk", "temperature", "battery", "clock", "tray"],
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Europe/Berlin",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%d %h %Y - %R}",
+        "on-click": "alacritty -e calcurse",
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "  {avail}GiB",
+        "tooltip": false
+    },
+    "disk": {
+        "format": "  {free}",
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "tooltip": false
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+         "format-good": "", // An empty format will hide the module
+         "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "],
+       //"exec": "~/.config/waybar/scripts/battery"
+        "interval": 5 
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "   {bandwidthTotalBytes}",
+        "format-ethernet": "  {bandwidthTotalBytes}",
+        "format-linked": "  {ifname} (No IP)",
+        "format-disconnected": " ⚠",
+        "on-click": "alacritty -e nmtui",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% ",
+        "format-bluetooth-muted": " ",
+        "format-muted": " ",
+        "format-icons": {
+            "default": ["", " ", "  "]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/pacman": {
+        "format": "  {}",
+        "interval": 30,                     // every hour
+        "exec": "pacman -Qu | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "on-click": "alacritty -e yay; pkill -SIGRTMIN+8 waybar", // update system
+        "signal": 8,
+        "tooltip": false
+    },	
+    "custom/mail": {
+        "format": "  {}",
+		"exec": "curl -X GET http://krinitsin.com:5000/mail/api/get_mail_count",
+		"interval": 10,
+        "on-click": "thunderbird"
+	},
+    "custom/pomodoro": {
+        "format": "{} ",
+        "return-type": "json",
+        "exec": "waybar-module-pomodoro",
+        "on-click": "waybar-module-pomodoro toggle",
+        "on-click-right": "waybar-module-pomodoro reset",
+    },
+    "custom/zeit": {
+      "format": "{} ",
+      "return-type": "json",
+      "exec": "zeit-waybar-dmenu",
+      "on-click": "zeit-waybar-dmenu click",
+      "interval": 1
+    }
+}
+

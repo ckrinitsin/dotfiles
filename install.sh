@@ -5,12 +5,7 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 cd $SCRIPTPATH
 
-# Ignore list
-IGNORE=("bin" "wallpaper" "install.sh" ".git" "scripts" "git" "nvim")
-
 printf "Start installing dotfiles\n\n"
-printf "Ignore: %s\n" "${IGNORE[@]}"
-printf "\n"
 
 # Install stow, if not installed
 pacman -Q | grep stow 1>/dev/null
@@ -23,35 +18,25 @@ fi
 
 # Prevent from symlinking whole directory
 if [ ! -d "/home/chris/.gnupg" ]; then
-    printf "Creating ~/.gnupg\n\n"
+    printf "Creating ~/.gnupg\n"
     mkdir ~/.gnupg
     chmod 700 ~/.gnupg
 else
-    printf "~/.gnupg is already available\n\n"
+    printf "~/.gnupg is already available\n"
 fi
 
-# Setting up all the symlinks
-max=${#IGNORE[@]}
-max=$((max-1))
-
-for f in *; do
-	ignored=false
-
-    #Check if package is in ignore list
-	for i in `seq 0 $max`
-	do
-
-		if [[ ${IGNORE[$i]} == $f ]]; then
-			ignored=true
-		fi
-
-	done
-
+for f in common/*; do
     # Create symlink if not ignored
-	if [[ $ignored == false ]]; then
-        printf "Symlink for $f created\n"
-		stow "$f"
-	fi
+    printf "Symlink for $f created\n"
+    stow -t ~/ -d common/ "$(basename $f)"
 done
 
-printf "\nDone\n"
+if [ $1 == "desktop" ]; then
+    for f in desktop/*; do
+        # Create symlink if not ignored
+        printf "Symlink for $f created\n"
+        stow -t ~/ -d desktop/ "$(basename $f)"
+    done
+fi
+
+printf "Done\n"

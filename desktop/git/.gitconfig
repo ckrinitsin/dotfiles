@@ -1,0 +1,10 @@
+[user]
+	email = mail@krinitsin.com
+	name = Christian Krinitsin
+	signingkey = 799D00D6E6A68B08
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
+[merge]
+	tool = nvimdiff
