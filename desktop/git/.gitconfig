@@ -6,5 +6,7 @@
 	rebase = true
 [commit]
 	gpgsign = true
+[core]
+	excludesfile = /home/chris/.dotfiles/common/git/.gitignore
 [merge]
 	tool = nvimdiff
