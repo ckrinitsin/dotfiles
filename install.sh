@@ -26,16 +26,21 @@ else
 fi
 
 for f in common/*; do
-    # Create symlink if not ignored
     printf "Symlink for $f created\n"
     stow -t ~/ -d common/ "$(basename $f)"
 done
 
 if [ $1 == "desktop" ]; then
     for f in desktop/*; do
-        # Create symlink if not ignored
         printf "Symlink for $f created\n"
         stow -t ~/ -d desktop/ "$(basename $f)"
+    done
+fi
+
+if [ $1 == "laptop" ]; then
+    for f in laptop/*; do
+        printf "Symlink for $f created\n"
+        stow -t ~/ -d laptop/ "$(basename $f)"
     done
 fi
 

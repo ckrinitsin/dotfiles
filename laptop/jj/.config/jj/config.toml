@@ -1,0 +1,20 @@
+#:schema https://jj-vcs.github.io/jj/latest/config-schema.json
+
+[user]
+name = "Christian Krinitsin"
+email = "mail@krinitsin.com"
+
+[signing]
+backend = "gpg"
+behavior = "own"
+key = "71C378DB8392AB08"
+
+[ui]
+default-command = "log"
+
+[revset-aliases]
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'closest_pushable(to)' = 'heads(::to & ~description(exact:"") & (~empty() | merges()))'
+
+[aliases]
+tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_pushable(@)"]

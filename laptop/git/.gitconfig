@@ -1,0 +1,12 @@
+[user]
+	email = mail@krinitsin.com
+	name = Christian Krinitsin
+	signingkey = 71C378DB8392AB08
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
+[core]
+	excludesfile = /home/chris/.dotfiles/common/git/.gitignore
+[merge]
+	tool = nvimdiff
